@@ -1,0 +1,25 @@
+{
+  "name": "wrapper-grpc-nodejs",
+  "version": "1.0.0",
+  "description": "Si",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node --watch server/main.js",
+    "client": "node --watch client/main.js"
+  },
+  "keywords": [
+    "grpc",
+    "microservices",
+    "protobuf",
+    "client",
+    "server"
+  ],
+  "author": "Idiar Chacin",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15"
+  }
+}
