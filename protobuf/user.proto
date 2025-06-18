@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  // Método principal de negocio
+  rpc GetUser (UserRequest) returns (UserResponse);
+
+  // Método para métricas del balanceador
+  rpc GetMetrics (Empty) returns (Metrics);
+}
+
+message UserRequest {
+  string id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+}
+
+// Para llamadas vacías (como en GetMetrics)
+message Empty {}
+
+message Metrics {
+  float cpu = 1;         // Porcentaje de uso de CPU (0.0 - 1.0)
+  float memusage = 2;    // Porcentaje de uso de memoria (0.0 - 1.0)
+  int32 conns = 3;       // Número de conexiones activas
+}
