@@ -16,6 +16,7 @@ let activeConns = 0;
 
 const service = {
   GetUser: (call, callback) => {
+    console.log(`[UserService] Solicitud recibida en GetUser:`, call.request); // <-- Añadido
     activeConns++;
     const id = call.request.id;
     setTimeout(() => {
@@ -25,6 +26,7 @@ const service = {
   },
 
   GetMetrics: (call, callback) => {
+    console.log(`[UserService] Solicitud recibida en GetMetrics`); // <-- Añadido
     const totalMem = os.totalmem();
     const freeMem = os.freemem();
     const memusage = 1 - freeMem / totalMem;
